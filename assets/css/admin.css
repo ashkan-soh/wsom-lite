@@ -1,0 +1,198 @@
+/**
+* WSOM Lite - Limited Stylesheet
+* توسعه‌دهنده‌ افزونه: اشکان سهروردی
+*/
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+.rtl .wsom-content h1, .rtl .wsom-content h2, .rtl .wsom-content h3, .rtl .wsom-content p {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Noto Sans Arabic", Arial, sans-serif;
+}
+.rtl .wrap.wsom-content {
+    margin-right: 2px !important;
+    margin-left: 20px !important;
+}
+.rtl .wsom-content h1, .rtl .wsom-content h2, .rtl .wsom-content h3, .rtl .wsom-content .wsom-filter-bar {
+    text-align: right !important;
+}
+.rtl .wsom-content .wsom-payment-summary, .rtl .wsom-content .wsom-report-summary {
+    justify-content: start !important;
+}
+.rtl .wsom-content.general-settings table th {
+    text-align: left !important;
+}
+.rtl .wsom-content.general-settings table td, .rtl .wsom-content p.description {
+    text-align: right !important;
+}
+.wsom-content table tr:hover td {
+    background-color: #d6eef7 !important;
+}
+.wsom-content.general-settings table tr:hover td {
+    background-color: unset !important;
+}
+.wrap.wsom-content {
+    margin: 40px 20px 20px 2px !important;
+}
+.ta-l {
+    text-align: left !important;
+}
+.ta-r {
+    text-align: right !important;
+}
+.ta-c {
+    text-align: center !important;
+}
+.tablenav {
+    height: unset !important;
+}
+input[type=text]:focus {
+    border-color: #fff !important;
+    box-shadow: 0 0 1px 1px #f1f1f1 !important;
+}
+[class^="wsom-"], .wsom-content, .datepicker-plot-area.datepicker-persian {
+    font-family: 'Vazirmatn';
+    font-weight: 400;
+}
+.wsom-content table {
+    direction: rtl;
+}
+.wsom-content table tr td, .wsom-content table thead tr th, .wsom-content table tfoot tr th {
+    text-align: center;
+}
+.wsom-content table thead tr th {
+    background-color: lightgrey;
+}
+.wsom-content td.column-paid_date, .wsom-content td.column-transaction_id {
+    direction: ltr;
+    font-family: 'Lucida Console';
+}
+.wsom-payment-summary, .wsom-content .wsom-report-summary{
+    margin:12px 0;
+    padding:12px;
+    font-size: 14.2px;
+    border:1px solid #ddd;
+    background:#fff;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+.wsom-content .wsom-tip-helper {
+    vertical-align:middle;
+    margin-right:6px;
+    opacity:.7;
+}
+.wsom-content .wsom-report-summary {
+    margin-bottom: -13px;
+}
+.wsom-inline-pagination .button {
+    padding: 0px;
+    line-height: 22px;
+    border: 0;
+    min-height: 22px;
+    margin: 0 5px;
+    vertical-align: text-bottom;
+}
+.wsom-content .tablenav.bottom .tablenav-pages {
+    float: unset;
+    margin: 0;
+    direction: ltr;
+    text-align: center;
+}
+.wsom-filter-bar .wsom-date {
+    width: 141px;
+    text-align: center;
+    font-family: inherit;
+    background-color: #f6f7f7;
+    border: 1px solid #2271b1;
+    font-size: 13px;
+    color: #2271b1;
+    caret-color: transparent !important;
+}
+.wsom-filter-bar .wsom-date::placeholder {
+    color: #2271b1;
+}
+.wsom-filter-bar .wsom-date:hover::placeholder, .wsom-filter-bar .wsom-date:focus::placeholder {
+    color: #fff;
+}
+.wsom-filter-bar .wsom-date:hover, .wsom-filter-bar .wsom-date:focus {
+    cursor: pointer;
+    border-width: 1px;
+    border-color: #367ab5;
+    background-color: #367ab5;
+    color: #f3f3f3 !important;
+}
+.wsom-filter-bar, form.wsom-form, .wsom-content p.description {
+    direction: rtl;
+    text-align: left;
+}
+.wsom-filter-bar .wsom-pick-dates, .wsom-filter-bar .wsom-presets {
+    display: inline;
+    margin-bottom: 15px;
+}
+.wsom-filter-bar .wsom-payment-presets a.button {
+    margin: 0 3px;
+}
+.wsom-filter-bar button.button:hover, .wsom-content a.button:hover, .wsom-content a.button:focus {
+    background-color: #367ab5 !important;
+    border-color: #367ab5 !important;
+    color: #f3f3f3;
+}
+.wsom-filter-bar button.button.active-cr, .wsom-content a.button.active-cr, .wsom-filter-bar .active-cr {
+   background-color: #1f588a !important;
+   border-color: #1f588a !important;
+   color: #f3f3f3;
+}
+.wsom-filter-bar .active-cr::placeholder {
+    color: #f3f3f3;
+}
+.wsom-content input.wsom-date.disabled, .wsom-content a.button.disabled-link, .wsom-content a.button.disabled-link:hover, .wsom-content a.button.disabled-link:focus {
+    pointer-events: none;
+    background-color: #eee;
+    color: #ccc;
+    border: none;
+}
+/* Will Be Remove On Pro Version**/
+.wsom-content p.description a {
+    text-decoration: none;
+    border-bottom: 1px dashed #2271b1;
+    color: #2271b1;
+    font-weight: 500;
+    padding-bottom: 1px;
+    margin: 10px 0 0 0;
+    display: inline-block;
+}
+.wsom-pro-box {
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    border-radius: 6px;
+    direction: rtl;
+    margin: 20px auto;
+}
+.wsom-pro-box ul {
+    list-style: inside;
+    padding-right: 20px;
+    line-height: 1.9;
+}
+.wsom-pro-box ul li.notice-pro {
+    display: inline-block;
+    border-bottom: 1px dashed #666;
+    padding-bottom: 6px;
+    font-weight: bold;
+    color: #3e3e3e;
+    font-size: 14px;
+}
