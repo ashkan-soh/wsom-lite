@@ -37,7 +37,7 @@ class Admin_Menu {
         echo '<div class="wrap wsom-content">';
         echo '<h1 class="wsom-title">گزارش سفارش‌های اسنپ‌پی (نسخه رایگان)</h1>';
         echo '<p class="description">در نسخه‌رایگان، فقط می‌توانید سفارش‌های ۷ روز گذشته را تا سقف ۲۰۰سفارش مشاهده کنید.';
-        echo '<br> <a href="https://github.com/ashkan-soh/wsom-lite/docs/index.html" target="_blank">مـستندات نسخه‌ی پـرمیوم</a>';
+        echo '<br> <a href="https://ashkan-soh.github.io/wsom-lite/" target="_blank">مـستندات نسخه‌ی پـرمیوم</a>';
         echo ' | <a href="https://www.zhaket.com/web/woo-snappay-orders-manager-pro-plugin/" target="_blank">خرید و ارتقا به نسخه پرمیوم</a>';
         echo '</p>';
         $table->display();
