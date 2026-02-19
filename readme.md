@@ -28,8 +28,7 @@ The Premium version includes:
 - Admin settings panel
 - Extended reporting tools
 
-👉 Documentaion: https://github.com/ashkan-soh/wsom-lite/docs/
-👉 Get Pro: https://www.zhaket.com/web/?
+👉 Get Pro: https://www.zhaket.com/web/
 
 ---
 
