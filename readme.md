@@ -8,7 +8,10 @@ WSOM Lite is a lightweight WooCommerce admin reporting tool designed for stores 
 ---
 
 ## 📖 Documentation
+
 Online docs(persian): https://ashkan-soh.github.io/wsom-lite/
+
+---
 
 ## ✨ Features (Lite Edition)
 
