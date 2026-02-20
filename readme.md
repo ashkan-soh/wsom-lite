@@ -3,7 +3,20 @@
 
 WSOM Lite is a lightweight WooCommerce admin reporting tool designed for stores using the Snappay payment gateway.
 
-یک ابزار تخصصی و حرفه‌ای برای فروشگاه‌هایی که از درگاه پرداخت اعتباری اسنپ‌پی استفاده می‌کنند. همه‌ی ویژگی‌های کاربردی در این نسخه فعال نیستند.
+یک ابزار تخصصی و حرفه‌ای برای فروشگاه‌هایی که از درگاه پرداخت اسنپ‌پی استفاده می‌کنند. همه ویژگی‌ها در این نسخه فعال نیستند.
+
+---
+
+
+## Download [WordPress-ready ZIP file]
+
+👉 **[دانلود آخرین نسخه‌](https://github.com/ashkan-soh/wsom-lite/releases/latest/download/woo-snappay-orders-manager.zip)**
+
+
+## 📖 Documentation
+
+Online docs(persian): https://ashkan-soh.github.io/wsom-lite/
+
 
 ---
 
@@ -14,18 +27,6 @@ WSOM Lite is a lightweight WooCommerce admin reporting tool designed for stores 
 - 🔢 Shows total Snappay orders across the entire store
 - 🕓 Displays the date of the first Snappay order
 - 🛡 Clean, minimal, production-ready architecture
-
----
-
-## 🚀 Download
-
-👉 **[Download the latest version](https://github.com/ashkan-soh/wsom-lite/releases/latest/download/woo-snappay-orders-manager.zip)**
-
----
-
-## 📖 Documentation
-
-Online docs(persian): https://ashkan-soh.github.io/wsom-lite/
 
 ---
 
@@ -72,4 +73,5 @@ The Premium version includes:
 ## 📄 License
 
 This plugin is licensed under the GPLv2 or later.
+# woo-snappay-orders-manager
 # wsom-lite
