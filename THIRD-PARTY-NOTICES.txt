@@ -1,23 +1,25 @@
-WooCommerce SnapPay Orders Manager
+Snappay Orders Manager
 Third-Party Notices
 ======================================
 
-This plugin includes third-party libraries. All included components are 
-licensed under GPL-compatible licenses as required by WordPress.org guidelines.
+This plugin includes third-party components that are licensed under 
+GPL-compatible licenses in accordance with WordPress.org guidelines.
 
+-----------------------------------------------------------------------
 
 1. Vazirmatn Font
 -----------------
 
-Font Name: Vazirmatn
-License: SIL Open Font License 1.1
+Project: Vazirmatn
+Author: Rastikerdar
+License: SIL Open Font License 1.1 (OFL-1.1)
+License URL: https://scripts.sil.org/OFL
 Source: https://github.com/rastikerdar/vazirmatn
 
-This font is licensed under the SIL Open Font License (OFL 1.1),
-which allows redistribution and is GPL-compatible.
-The full license text is included in /licenses/OFL.txt.
+The full text of the SIL Open Font License is included in:
+licenses/OFL.txt
 
---------------------------------------
+-----------------------------------------------------------------------
 
-All third-party components included in this plugin are compatible with the
-GNU General Public License (GPL v2 or later).
+All third-party components included in this plugin are compatible with 
+the GNU General Public License v2 or later.

@@ -1,16 +1,16 @@
 <?php
 /**
- * Plugin Name: مدیریت اقساط اسنپ‌پی ووکامرس
- * Plugin URI:  https://github.com/ashkan-soh/wsom-lite/
- * Description: یک ابزار ساده و جامع برای نمایش و مدیریت پرداخت‌های اسنپ‌پی در ووکامرس - نسخه رایگان(بدون ویژگی‌های کاربردی)
+ * Plugin Name: Snappay Orders Manager
+ * Plugin URI:  https://ashkan-soh.github.io/wsom-lite/
+ * Description: Lightweight admin report for Woocommerce orders paid with Snappay. (Free Version)
  * Version:     1.0.0
  * Author:      Ashkan Sohrevardi
- * Author URI: https://github.com/ashkan-soh
+ * Author URI:  https://github.com/ashkan-soh/
  * Requires at least: 5.9
  * Requires PHP: 7.4
- * License: GPL v2 or later
+ * License:     GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: woo-snappay-orders-manager
+ * Text Domain: snappay-orders-manager
  * Domain Path: /languages
  */
 

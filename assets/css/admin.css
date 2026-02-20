@@ -20,6 +20,10 @@
 .rtl .wsom-content h1, .rtl .wsom-content h2, .rtl .wsom-content h3, .rtl .wsom-content p {
   font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont,
                "Segoe UI", Roboto, "Noto Sans Arabic", Arial, sans-serif;
+               direction: rtl;
+}
+.rtl .wsom-content h1, .rtl .wsom-content h2, .rtl .wsom-content h3 {
+    font-weight: 500 !important;
 }
 .rtl .wrap.wsom-content {
     margin-right: 2px !important;
@@ -65,9 +69,6 @@ input[type=text]:focus {
 [class^="wsom-"], .wsom-content, .datepicker-plot-area.datepicker-persian {
     font-family: 'Vazirmatn';
     font-weight: 400;
-}
-.wsom-content table {
-    direction: rtl;
 }
 .wsom-content table tr td, .wsom-content table thead tr th, .wsom-content table tfoot tr th {
     text-align: center;
@@ -136,7 +137,6 @@ input[type=text]:focus {
     color: #f3f3f3 !important;
 }
 .wsom-filter-bar, form.wsom-form, .wsom-content p.description {
-    direction: rtl;
     text-align: left;
 }
 .wsom-filter-bar .wsom-pick-dates, .wsom-filter-bar .wsom-presets {
@@ -166,14 +166,17 @@ input[type=text]:focus {
     border: none;
 }
 /* Will Be Remove On Pro Version**/
-.wsom-content p.description a {
+.wsom-content p.description a.extr-link {
     text-decoration: none;
     border-bottom: 1px dashed #2271b1;
     color: #2271b1;
-    font-weight: 500;
     padding-bottom: 1px;
     margin: 10px 0 0 0;
     display: inline-block;
+    vertical-align: middle;
+}
+.wsom-content p.description a.extr-link span.dashicons {
+    font-size: 13px !important;
 }
 .wsom-pro-box {
     padding: 20px;

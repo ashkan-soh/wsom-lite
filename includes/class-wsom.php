@@ -6,19 +6,6 @@ defined( 'ABSPATH' ) || exit;
 
 use WSOM\Admin\Admin_Menu;
 
-/**
- * Plugin Name: WSOM – Woo Snappay Orders Manager (Lite)
- * Description: Snappay orders reporting tool (Lite Edition – limited features).
- * Version: 1.0.0
- * Author: Ashkan Sohrevardi
- * Requires at least: 5.9
- * Tested up to: 6.5
- * Requires PHP: 7.4
- * License: GPLv2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: wsom
- */
-
 final class Plugin {
 
     private static $instance = null;
@@ -41,7 +28,7 @@ final class Plugin {
         //Woocommerce
         if ( ! class_exists( 'WooCommerce' ) ) {
             $this->deactivate_with_notice(
-                'افزونه «مدیریت اقساط اسنپ‌پی» برای اجرا نیاز به ووکامرس دارد.'
+                __( 'Woo Snappay Orders Manager requires WooCommerce to be installed and active.', 'snappay-orders-manager' )
             );
             return;
         }
@@ -49,7 +36,7 @@ final class Plugin {
         //Snappay gateway - official version
         if ( ! class_exists( 'WC_Gateway_SnappPay' ) ) {
             $this->deactivate_with_notice(
-                'برای استفاده از افزونه «مدیریت اقساط اسنپ‌پی»، افزونه درگاه پرداخت اسنپ‌پی باید نصب و فعال باشد.'
+                __( 'Woo Snappay Orders Manager requires the official Snappay payment gateway plugin to be installed and active.', 'snappay-orders-manager' )
             );
             return;
         }
@@ -64,8 +51,11 @@ final class Plugin {
         } );
 
         add_action( 'admin_init', function () {
+            if ( ! function_exists( 'deactivate_plugins' ) ) {
+                require_once ABSPATH . 'wp-admin/includes/plugin.php';
+            }
             deactivate_plugins(
-                plugin_basename( WSOM_PATH . 'woo-snappay-orders-manager.php' )
+                plugin_basename( WSOM_FILE )
             );
         } );
     }
@@ -91,7 +81,7 @@ final class Plugin {
     private function add_no_access_notice(): void {
         add_action( 'admin_notices', function () {
             echo '<div class="notice notice-error"><p>';
-            echo esc_html__( 'شما اجازه دسترسی به افزونه مدیریت اقساط اسنپ‌پی را ندارید. فقط ادمین کل می‌تواند از این پلاگین استفاده کند.', 'woo-snappay-orders-manager' );
+            echo esc_html__( 'You do not have permission to access this page. (Admin-only)', 'snappay-orders-manager' );
             echo '</p></div>';
         } );
     }
@@ -106,7 +96,8 @@ final class Plugin {
             new Admin_Menu();
 
             add_action( 'admin_enqueue_scripts', function( $hook_suffix ) {
-                if ( empty($_GET['page']) || $_GET['page'] !== \WSOM\Admin\Admin_Menu::MENU_SLUG ) {
+                            $page = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
+                if ( $page !== \WSOM\Admin\Admin_Menu::MENU_SLUG ) {
                     return;
                 }
 
