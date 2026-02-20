@@ -11,12 +11,6 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
     require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
 
-/**
-* Orders Report (Lite Version)
-* توسعه‌دهنده‌ افزونه: اشکان سهروردی
-* Displays Snappay orders from the last 7 days only.
-*/
-
 class Orders_Report extends WP_List_Table {
 
     /** @var int */
@@ -36,14 +30,13 @@ class Orders_Report extends WP_List_Table {
 
     public function get_columns() {
         return [
-            'customer'        => 'نام مشتری',
-            'order_id'        => 'شماره سفارش',
-            'order_status'    => 'وضعیت سفارش',
-            'transaction_id'  => 'شناسه تراکنش',
-            'paid_date'       => 'تاریخ پرداخت',
-            'amount'          => 'مبلغ پرداخت',
-            'payment_status'  => 'وضعیت پرداخت',
-            
+            'customer'       => esc_html__( 'Customer', 'snappay-orders-manager' ),
+            'order_id'       => esc_html__( 'Order ID', 'snappay-orders-manager' ),
+            'order_status'   => esc_html__( 'Order Status', 'snappay-orders-manager' ),
+            'transaction_id' => esc_html__( 'Transaction ID', 'snappay-orders-manager' ),
+            'paid_date'      => esc_html__( 'Paid Date', 'snappay-orders-manager' ),
+            'amount'         => esc_html__( 'Amount', 'snappay-orders-manager' ),
+            'payment_status' => esc_html__( 'Payment Status', 'snappay-orders-manager' ),
         ];
     }
 
@@ -163,52 +156,39 @@ class Orders_Report extends WP_List_Table {
 
     public function extra_tablenav( $which ) {
 
-        if ( $which !== 'top' ) {
-            return;
-        }
+    if ( $which !== 'top' ) {
+        return;
+    }
 
-        $month_label = function_exists( 'wp_date' ) ? wp_date( 'F Y' ) : '';
+    $first_snappay_order_ts = Snappay::get_first_snappay_order_date();
+    $first_snappay_order_label = $first_snappay_order_ts
+        ? ( function_exists( 'wp_date' )
+            ? wp_date( 'Y/m/d', $first_snappay_order_ts )
+            : date( 'Y/m/d', $first_snappay_order_ts )
+        )
+        : '—';
 
-        $first_snappay_order_ts = Snappay::get_first_snappay_order_date();
-        $first_snappay_order_label = $first_snappay_order_ts
-            ? ( function_exists( 'wp_date' )
-                ? wp_date( 'Y/m/d', $first_snappay_order_ts )
-                : date( 'Y/m/d', $first_snappay_order_ts )
-            )
-            : '—';
+    ?>
+    <div class="wsom-filter-bar" style="margin-top: 10px;">
+        <div class="wsom-report-summary" style="margin-top: 15px;">
+            <span class="wsom-report-summary__label" style="margin-right: 12px;"><?php echo esc_html__( 'First Snappay order date:', 'snappay-orders-manager' ); ?></span>
+            <span class="wsom-report-summary__count">
+                <?php echo esc_html( $first_snappay_order_label ); ?>
+            </span>
 
-        ?>
-        <div class="wsom-filter-bar" style="margin-top: 10px;">
-            <div class="wsom-presets">
-                <button type="button" class="button wsom-preset" disabled data-preset="today">امروز</button>
-                <button type="button" dir="rtl" class="button wsom-preset" disabled data-preset="current_month">ماه جاری (<?php echo esc_html( $month_label ); ?>)</button>
-            </div>
-            <div class="wsom-pick-dates">
-                <button type="button" class="button wsom-preset" disabled>انتخاب تاریخ</button>
-                <button type="button" class="button wsom-preset" disabled>انتخاب دوره گزارش</button>
-            </div>
-            <div class="wsom-presets">
-                <button type="button" class="button wsom-preset" disabled data-preset="all">همه</button>
-            </div>
+            <span class="wsom-report-summary__label" style="margin-right: 12px;"><?php echo esc_html__( 'Total Snappay orders in store:', 'snappay-orders-manager' ); ?></span>
+            <span class="wsom-report-summary__count">
+                <?php echo number_format_i18n( (int) $this->total_all_snappay ); ?>
+            </span>
 
-            <div class="wsom-report-summary" style="margin-top: 15px;">
-                <span class="wsom-report-summary__label" style="margin-right: 12px;">تـاریخ اولین ســفارش  فروشگاه با درگاه اسنپ‌پی:</span>
-                <span class="wsom-report-summary__count">
-                    <?php echo esc_html( $first_snappay_order_label ); ?>
-                </span>
-
-                <span class="wsom-report-summary__label" style="margin-right: 12px;">کل ســفارش‌های فروشگاه با درگاه اسنپ‌پی:</span>
-                <span class="wsom-report-summary__count">
-                    <?php echo number_format_i18n( (int) $this->total_all_snappay ); ?>
-                </span>
-
-                <span class="wsom-report-summary__label" style="font-weight:bold;">سفارش‌های ۷ روز گـذشته:</span>
-                <span class="wsom-report-summary__count" style="font-weight:bold;">
-                    <?php echo number_format_i18n( (int) $this->total_items ); ?>
-                </span>
-            </div>
+            <span class="wsom-report-summary__label" style="font-weight:bold;"><?php echo esc_html__( 'Snappay orders in last 7 days:', 'snappay-orders-manager' ); ?></span>
+            <span class="wsom-report-summary__count" style="font-weight:bold;">
+                <?php echo number_format_i18n( (int) $this->total_items ); ?>
+            </span>
         </div>
-        <?php
-    }  
+    </div>
+    <?php
+}
 
 }
+
