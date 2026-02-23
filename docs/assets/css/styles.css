@@ -191,6 +191,12 @@ ul.check li::before, ul li.check::before {
     width: 85%;
     margin: 60px auto;
 }
+div.buy-section {
+    padding-top: 30px;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
 a.btn {
     margin: 5px 15px;
     padding: 12px 15px 8px 15px;
@@ -221,6 +227,10 @@ a.btn-pro {
     color: #2b2424;
     background-color: darkseagreen;
     border-color: #7e957e;
+}
+.wrap.fa a.btn-pro {
+    display: inline-block;
+    width: 75%;
 }
 a.btn:hover {
     background-color: #262626;
