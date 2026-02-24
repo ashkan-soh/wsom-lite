@@ -62,6 +62,12 @@ body{
 .wrap.en {
 	display: none;
 }
+.wrap.pg1 {
+    display: block;
+}
+.wrap.pg2, .wrap.pg3 {
+    display: none;
+}
 img {
     width: 100%;
     display: inline-block;
@@ -191,6 +197,9 @@ ul.check li::before, ul li.check::before {
     width: 85%;
     margin: 60px auto;
 }
+.dn {
+    display: none;
+}
 div.buy-section {
     padding-top: 30px;
     display: block;
@@ -198,7 +207,7 @@ div.buy-section {
     margin-bottom: 20px;
 }
 a.btn {
-    margin: 5px 15px;
+    margin: 15px;
     padding: 12px 15px 8px 15px;
     border-style: solid;
     border-width: 1px;
@@ -230,16 +239,21 @@ a.btn-pro {
 }
 .wrap.fa a.btn-pro {
     display: inline-block;
-    width: 75%;
+    width: 65%;
+}
+.wrap.fa a.btn-free {
+    display: inline-block;
+    min-width: 217px;
+    width: 15%;
 }
 a.btn:hover {
     background-color: #262626;
     color: #fff;
     border-color: #444;
 }
-/*****
-***[lang=en]***
-***/
+/******************
+****[lang=en]****
+******************/
 .wrap.en .title-section {
     font-weight: 500 !important;
     letter-spacing: normal;
@@ -281,4 +295,191 @@ a.btn:hover {
 }
 .wrap.en dl > dd {
     margin: 0 0 0 75px;
+}
+/***********************
+******[DEMO-PAGE]*****
+***********************/
+a {
+    text-decoration: none;
+}
+table {
+    width: 100%;
+    border-spacing: 0;
+    line-height: 38px;
+    font-size: 14px;
+    border: 1px solid #c4c4c4;
+}
+table th {
+    font-weight: normal;
+    background-color: #ddd;
+    text-align: center;
+    color: #343434;
+}
+table td {
+    text-align: center;
+    color: #343434;
+}
+tr:nth-child(even) {
+  background-color: #ededed;
+}
+tr:hover {
+    background-color: #d6eef7 !important;
+}
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+#menos {
+    color: #fff;
+    background-color: #1d2327;
+    font-family: 'Tahoma';
+    width: 240px;
+    padding-top: 20px;
+    padding-bottom: 5%;
+}
+#menos ul {
+    margin: 0;
+    padding: 0;
+}
+#menos ul > li {
+    margin: 0;
+    padding: 0 2px 0 30px;
+    line-height: 35px;
+    position: relative;
+    font-size: 13.5px;
+}
+#menos ul > li::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 5px;
+    height: 35px;
+    background-color: #1d2327;
+}
+#menos ul > li.disable, #menos ul > li.disable i {
+    color: #888;
+}
+#menos ul > li.crnt::before {
+    height: 50px;
+}
+#menos ul > ul li::before {
+    display: none;
+}
+#menos ul > ul li {
+    padding-right: 30px;
+}
+#menos ul > li i {
+    display: inline-block;
+    line-height: 22px;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #aaa;
+    margin-right: 6px;
+}
+#menos .noc {
+    background-color: #1d2327;
+}
+#menos ul > li:hover i {
+    color: #fff;
+}
+#menos ul > li:hover::before {
+    background-color: #72aee6;
+}
+#menos ul > li:hover {
+    cursor: pointer;
+    color: #8ec6f4;
+}
+#menos li > ul {
+    margin: 0;
+    padding: 0;
+}
+#menos li > ul > li {
+    padding: 0 25px 0 0;
+}
+#contento {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.wsom-payment-presets a.button, .payment-scheduale button {
+    font-family: 'Vazirmatn';
+    font-size: 13px;
+    min-height: 31px;
+    padding: 0 10px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    color: #2271b1;
+    border-color: #2271b1;
+    background: #f6f7f7;
+    vertical-align: top;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 30px;
+}
+.wsom-payment-presets input, .payment-scheduale input {
+    padding: 0 8px;
+    line-height: 2;
+    min-height: 30px;
+    box-shadow: 0 0 0 transparent;
+    border-radius: 4px;
+}
+.wsom-payment-breakdown {
+    font-size: 14px;
+    font-weight: normal;
+}
+.datepicker-container {
+    direction: rtl !important;
+}
+.datepicker-plot-area .datepicker-navigator {
+    direction: ltr;
+}
+.datepicker-plot-area .datepicker-year-view .year-item, .datepicker-plot-area .datepicker-month-view .month-item {
+    border-radius: 10px !important;
+    width: 31% !important;
+    margin: 4px 2px !important;
+}
+table.widefat.striped a {
+    cursor: pointer;
+    color: #2271b1;
+}
+.back-link {
+    position: relative;
+}
+.back-link a {
+    position: absolute;
+    left: 130px;
+    top: 90px;
+}
+table.widefat.striped span.dashicons {
+    vertical-align: middle;
+}
+table.form-table {
+    border: none;
+    width: 50%;
+}
+table.form-table input {
+    border-radius: unset;
+    font-size: 15px;
+}
+table.form-table td {
+    padding: 15px;
+}
+.button-primary {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    cursor: pointer;
+}
+.bt.active {
+    color: #fff;line-height: 50px;
+    font-weight: bold;
 }
